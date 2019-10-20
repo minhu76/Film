@@ -1,0 +1,44 @@
+.footer {
+    background-color: #101010;
+    padding-top: 4rem;
+}
+
+.footer a {
+    transition: all 0.5s;
+}
+
+.footer__item h3 {
+    color: #ec7532;
+    font-size: 17px;
+    margin-bottom: 22px;
+}
+
+.footer__item li a {
+    color: #fff;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.footer__item li a:hover {
+    color: #fbbd61;
+}
+
+.footer__item li a i {
+    display: inline-block;
+    color: #4a4a4a;
+    width: 30px;
+}
+
+.copyright {
+    font-size: 14px;
+}
+
+.copyright a:hover {
+    color: #ec7532;
+}
+
+
+#trailerModal iframe {
+    height: 50vh;
+    width: 100%;
+}
