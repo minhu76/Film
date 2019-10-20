@@ -1,0 +1,22 @@
+.movie__title {
+    text-align: center;
+    font-size: 1.5rem;
+    color: black;
+
+}
+.movie__title span {
+    margin: 0 1.5rem;
+    cursor: pointer;
+}
+.movie__title span:hover{
+    color: #fa5238;
+}
+.movie__title span.active{
+    color: #fa5238;
+}
+.movie__item img{
+    border-radius: 0.3rem;
+}
+.movie__name {
+    font-size: 1.5rem;
+}
