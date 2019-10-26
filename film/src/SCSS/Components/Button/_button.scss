@@ -1,0 +1,21 @@
+@import "./../../Helper/variable";
+.myButton {
+    font-size: $fs-2;
+    background-color: $color-blue-2;
+    color: $color-white-0;
+    margin:0 $mg-0;
+    border-color: $color-blue-1;
+    border: none;
+    outline: none;
+    padding: 2px;
+    
+    &:hover{    
+        font-size: $fs-4;
+        transition: .5s;
+
+    }
+    &:focus{
+        outline: none;
+    }
+
+}

@@ -1,0 +1,10 @@
+@mixin myButton($bg-color, $py, $px, $border-color, $bg-color-hover) {
+  background-color: $bg-color;
+  padding: $py $px;
+  border-radius: 2px;
+  border: 1px solid $border-color;
+
+  &:hover {
+      background-color: $bg-color-hover;
+  }
+}
