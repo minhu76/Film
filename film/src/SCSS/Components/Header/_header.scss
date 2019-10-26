@@ -1,0 +1,13 @@
+@import "./../../Helper/variable";
+
+.myHeader{
+    background-color: $color-grey-1;
+    
+}
+ul li .myNavLink {
+    color: $color-white-0;
+}
+.myButton {
+    color: $color-red-0;
+    background-color: $color-grey-1;
+}
