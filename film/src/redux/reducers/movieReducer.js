@@ -10,8 +10,8 @@ const movieReducer = (state = initState, action) =>{
             return {listMovies};
         }
         case ActionType.ON_SAVE_LIST_CAROUSEL:{
-            let listCarousels = action.listMovie;
-            return {listCarousels};
+            let listMovies = action.listMovie;
+            return {listMovies};
         }
         default:
             return {...state};
