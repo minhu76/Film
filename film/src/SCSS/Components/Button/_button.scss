@@ -1,21 +1,53 @@
 @import "./../../Helper/variable";
+
 .myButton {
     font-size: $fs-2;
-    background-color: $color-blue-2;
-    color: $color-white-0;
+    background-color: red;
+    
+    color: $color-grey-3;
     margin:0 $mg-0;
     border-color: $color-blue-1;
     border: none;
     outline: none;
     padding: 2px;
     
-    &:hover{    
-        font-size: $fs-4;
-        transition: .5s;
+    // &:hover{    
+    //     font-size: $fs-4;
+    //     transition: .5s;
 
-    }
+    // }
     &:focus{
         outline: none;
     }
 
+}
+
+.login, .signup {
+    font-size: $fs-3;
+    background-color: none;
+    // background-color: none;
+    color: $color-grey-3;
+    margin:0 $mg-0;
+    border-color: $color-blue-1;
+    border: none;
+    outline: none;
+    padding: 2px;
+    
+    &:hover{
+        color: $color-red-0;
+        cursor: pointer;
+    }
+    &:focus{
+        outline: none;
+    }
+    &i{
+        font-size: $fs-4;
+    }    
+
+}
+.signup{
+    border-left:1px solid $color-grey-3;
+    &a{
+        margin-left: 5px ;
+    }
 }
