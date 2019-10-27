@@ -6,7 +6,7 @@ import App from './App';
 //setup Redux
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import { rootReducer } from './redux/reducers/rootReducer';
+import  rootReducer  from './redux/reducers/rootReducer';
 //setup Bootstrap, jquery, pooper
 import "bootstrap/dist/css/bootstrap.min.css";
 import "popper.js/dist/umd/popper.min.js";

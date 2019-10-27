@@ -41,7 +41,7 @@ class ListCarousels extends Component {
 }
 const mapStateToProps = (state) => {
     return {
-        listMovies: state.movieReducer.listCarousels
+        listMovies: state.movieReducer.listMovies
     }
 }
 const mapDispatchToProps = (dispatch) => {
