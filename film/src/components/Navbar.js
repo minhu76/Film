@@ -27,7 +27,7 @@ export default class Navbar extends Component {
                             <NavLink activeClassName="active" className="nav-link myNavLink" to="/news">Tin Tức</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink activeClassName="active" className="nav-link myNavLink" to="/book-now">Đặt vé ngay</NavLink>
+                            <NavLink activeClassName="active" className="nav-link myNavLink" to="/member">Thành Viên</NavLink>
                         </li>
                     </ul>
                     <div className="row">

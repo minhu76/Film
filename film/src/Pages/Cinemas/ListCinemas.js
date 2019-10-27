@@ -1,29 +1,59 @@
-import React, { Component } from 'react'
-import Cinema from './Cinema';
-import Cinema2 from './Cinema2';
+import React, { Component } from 'react';
+import Axios from 'axios';
+import * as action from './../../redux/action/index';
+import { connect } from 'react-redux';
+import Cinema from '../../components/Cinema';
 
-export default class ListCinemas extends Component {
+
+class ListCinemas extends Component {
+    componentDidMount() {
+        Axios({
+            method: 'GET',
+            url: "http://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinHeThongRap"
+        })
+            .then(result => {
+                this.props.onSaveListCinema(result.data);
+
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    }
+
+    renderSource = () => {
+        let { listCinemas } = this.props;
+        return listCinemas.map((item, index) => {
+            if (index < 6) {
+                return <Cinema key={index} cinema={item} />
+            }
+        })
+
+    }
+
     render() {
         return (
             <div className="container">
-                <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                    <li className="nav-item">
-                        <a className="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">CỤM RẠP 1</a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">CỤM RẠP 2</a>
-                    </li>                   
-                </ul>
-                <div className="tab-content" id="pills-tabContent">
-                    <div className="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                        <Cinema />
-                    </div>
-                    <div className="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                        <Cinema2 />
+                <div className="row">
+                    <div className="col-3">
+                        <h3>CỤM RẠP</h3>
+                        {this.renderSource()}
                     </div>
                 </div>
             </div>
-
         )
     }
 }
+const mapStateToProps = (state) => {
+    return {
+        listCinemas: state.cinemaReducer.listCinemas
+    }
+}
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onSaveListCinema: (listCinemas) => {
+            dispatch(action.actOnSaveListCinema(listCinemas));
+        }
+
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(ListCinemas);

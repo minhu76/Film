@@ -6,7 +6,6 @@ import { routesHome } from './routes';
 //import Pages
 import Navbar from './components/Navbar';
 import ListCarousels from './Pages/Carousel/ListCarousels';
-import HomePage from './Pages/HomePage';
 import Footer from './Pages/Footer/Footer';
 
 

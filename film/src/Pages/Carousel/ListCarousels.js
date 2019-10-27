@@ -22,7 +22,7 @@ class ListCarousels extends Component {
     renderSource = () => {
         let { listMovies } = this.props;
         return listMovies.map((item, index) => {
-            if (index < 19) {
+            if (index < 1) {
                 return <Carousel key={index} carousel={item} />
             }
         })
@@ -31,11 +31,10 @@ class ListCarousels extends Component {
 
     render() {
         return (
-            <div className="container">
-                <div className="row">
-                    {this.renderSource()}
-                </div>
+            <div className="carousel">              
+                    {this.renderSource()}           
             </div>
+           
         )
     }
 }
