@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import _carousel from './../SCSS/Components/Carousel/_carousel.scss';
 
 export default class Carousel extends Component {
     render() {
@@ -10,25 +11,30 @@ export default class Carousel extends Component {
                     <li data-target="#demo" data-slide-to={0} className="active" />
                     <li data-target="#demo" data-slide-to={1} />
                     <li data-target="#demo" data-slide-to={2} />
+                    <li data-target="#demo" data-slide-to={3} />
                 </ul>
                 {/* The slideshow */}
+
                 <div className="carousel-inner">
                     <div className="carousel-item active">
-                        <iframe src={carousel.trailer} width="100%" height="100%" />
+                        <img src={require('./../img/carousel5.jpg')} />
                     </div>
                     <div className="carousel-item">
-                        <iframe src={carousel.trailer} width="100%" height="100%" />
+                        <img src={require('./../img/carousel2.jpg')} />
                     </div>
                     <div className="carousel-item">
-                        <iframe src={carousel.trailer} width="100%" height="100%" />
+                        <img src={require('./../img/carousel3.jpg')} />
+                    </div>
+                    <div className="carousel-item">
+                        <img src={require('./../img/carousel1.jpg')} />
                     </div>
                 </div>
                 {/* Left and right controls */}
-                <a className="carousel-control-prev prev" href="#demo" data-slide="prev">
-                    <span className="carousel-control-prev-icon" />
+                <a className="carousel-control-prev prev" href="#demo" data-slide="prev">                  
+                    <img src={require('./../img/left-arrow.png')} />
                 </a>
-                <a className="carousel-control-next next" href="#demo" data-slide="next">
-                    <span className="carousel-control-next-icon" />
+                <a className="carousel-control-next next" href="#demo" data-slide="next">                  
+                    <img src={require('./../img/right-arrow.png')} />
                 </a>
             </div>
 

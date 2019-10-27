@@ -1,15 +1,22 @@
 import * as ActionType from './../constants/ActionType';
 
 const actOnSaveListMovie = (listMovie) => {
-    return {    
+    return {
         type: ActionType.ON_SAVE_LIST_MOVIE,
         listMovie
     },
 
-    {
-        type: ActionType.ON_SAVE_LIST_CAROUSEL,
-        listMovie
-    }
+        {
+            type: ActionType.ON_SAVE_LIST_CAROUSEL,
+            listMovie
+        }
 }
+const actOnSaveListCinema = (listCinema) => {
+    return {
+        type: ActionType.ON_SAVE_LIST_CINEMA,
+        listCinema
+    }
+};
+export { actOnSaveListMovie }
+export { actOnSaveListCinema };
 
-export {actOnSaveListMovie};

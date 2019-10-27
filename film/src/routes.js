@@ -1,8 +1,8 @@
 import HomePage from './Pages/HomePage';
 import ListMovies from './Pages/ListMovies/ListMovies';
 import ListCinemas from './Pages/Cinemas/ListCinemas';
-import BookNow from './Pages/Booknow/Booknow';
 import NewsApp from './Pages/News/NewsApp';
+import ListMember from './Pages/Member/ListMember';
 import PageNotFound from './Pages/PageNotFound/PageNotFound';
 
 const routesHome = [
@@ -27,9 +27,9 @@ const routesHome = [
         component: NewsApp
     },
     {
-        path: "/book-now",
+        path:"/member",
         exact: true,
-        component: BookNow
+        component: ListMember
     },
     {
         path:"",
