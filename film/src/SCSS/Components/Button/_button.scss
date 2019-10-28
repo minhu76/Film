@@ -1,15 +1,14 @@
 @import "./../../Helper/variable";
 
 .myButton {
-    font-size: $fs-2;
-    background-color: red;
-    
-    color: $color-grey-3;
+    font-size: $fs-3;
+    background-color: $color-red-0;
+    color: $color-black-1;
     margin:0 $mg-0;
     border-color: $color-blue-1;
     border: none;
     outline: none;
-    padding: 2px;
+    padding-left: 0px;
     
     // &:hover{    
     //     font-size: $fs-4;
@@ -25,7 +24,6 @@
 .login, .signup {
     font-size: $fs-3;
     background-color: none;
-    // background-color: none;
     color: $color-grey-3;
     margin:0 $mg-0;
     border-color: $color-blue-1;
@@ -50,4 +48,7 @@
     &a{
         margin-left: 5px ;
     }
+}
+.my__signup img{
+    border-radius: 50%;
 }

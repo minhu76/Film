@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom';
-import Login from './Login';
-import SignUp from './SignUp';
+import FormLogin from './../Pages/FormLogin/FormLogin';
 import _header from './../SCSS/Components/Header/_header.scss';
 import _button from './../SCSS/Components/Button/_button.scss';
 
@@ -15,27 +14,32 @@ export default class Navbar extends Component {
                     {/* Links */}
                     <ul className="navbar-nav ">
                         <li className="nav-item my__navitem">
-                            <NavLink activeClassName="active" className="nav-link myNavLink" to="/">Trang Chủ</NavLink>
+                            <NavLink activeClassName="active" className="nav-link justify-content-between myNavLink" to="/">Trang Chủ</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink activeClassName="active" className="nav-link myNavLink" to="/list-movie">Danh Sách Phim</NavLink>
+                            <NavLink activeClassName="active" className="nav-link justify-content-between myNavLink" to="/list-movie">Danh Sách Phim</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink activeClassName="active" className="nav-link myNavLink" to="/cinemas">Cụm Rạp</NavLink>
+                            <NavLink activeClassName="active" className="nav-link justify-content-between myNavLink" to="/cinemas">Cụm Rạp</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink activeClassName="active" className="nav-link myNavLink" to="/news">Tin Tức</NavLink>
+                            <NavLink activeClassName="active" className="nav-link justify-content-between myNavLink" to="/news">Tin Tức</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink activeClassName="active" className="nav-link myNavLink" to="/member">Thành Viên</NavLink>
+                            <NavLink activeClassName="active" className="nav-link justify-content-between myNavLink" to="/member">Thành Viên</NavLink>
                         </li>
                     </ul>
                     <div className="row">
-                        <form className="form-inline" action="/action_page.php">
-                            <input className="form-control mr-sm-2" type="text" placeholder="Search" />    
-                        </form>
-                        <button className="myButton"><Login /></button>
-                        <button className="myButton"><SignUp /></button>
+                        <div>
+                            <form className="form-inline" action="/action_page.php">
+                                <input className="form-control mr-sm-2" type="text" placeholder="Tìm kiếm phim" />
+                            </form>
+                        </div>
+
+                        <div className="my__signup">
+                            <img src={require('./../img/avatar.png')} width="10%" />
+                            <button className="myButton"><FormLogin /></button>
+                        </div>
                     </div>
                 </nav>
             </div>
