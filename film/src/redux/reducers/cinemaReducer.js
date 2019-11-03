@@ -1,7 +1,9 @@
 import * as ActionType from "./../constants/ActionType";
 
 let initState = {
-    listCinemas: []
+    listCinemas: [],
+    cinema: {}
+ 
 };
 
 const cinemaReducer = (state = initState, action) =>{
@@ -10,6 +12,7 @@ const cinemaReducer = (state = initState, action) =>{
             let listCinemas = action.listCinema;
             return {listCinemas};
         }
+        
         default:
             return {...state}
     }

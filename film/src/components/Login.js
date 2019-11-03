@@ -6,7 +6,7 @@ export default class Login extends Component {
             <div>
                 <div>
                     {/* Button trigger modal */}
-                    <button className="myButton" type="button" data-toggle="modal" data-target="#exampleModalScrollable">
+                    <button className="btn" type="button" data-toggle="modal" data-target="#exampleModalScrollable">
                         Đăng nhập
                     </button>
                     {/* Modal */}
@@ -29,7 +29,7 @@ export default class Login extends Component {
                                 </div>
                                 <div className="modal-body">
                                     <div className="form-group">
-                                        <div className="input-group mb-2">
+                                        <div className="input-group">
                                             <div className="input-group-prepend">
                                                 <div className="input-group-text">
                                                     <i className="fa fa-user"></i>
@@ -37,7 +37,7 @@ export default class Login extends Component {
                                             </div>
                                             <input type="text" className="form-control" id="inlineFormInputGroup" placeholder="Username" />
                                         </div>
-                                        <div className="input-group mb-2">
+                                        <div className="input-group">
                                             <div className="input-group-prepend">
                                                 <div className="input-group-text">
                                                     <i className="fa fa-unlock"></i>
@@ -51,12 +51,12 @@ export default class Login extends Component {
                                     </div>
                                     <div className="modal-footer">
                                         <button type="button" className="btn btn-primary container">Đăng nhập</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
             </div >
         )
     }

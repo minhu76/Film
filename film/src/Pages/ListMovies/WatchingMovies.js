@@ -1,31 +1,20 @@
 import React, { Component } from 'react';
-import Axios from 'axios';
 import Movie from './../../components/Movie';
 import * as action from './../../redux/action/index';
 import { connect } from 'react-redux';
 
 class WatchingMovies extends Component {
     componentDidMount() {
-        Axios({
-            method: "GET",
-            url: "http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP01"
-        })
-            .then(result => {
-                this.props.onSaveListMovie(result.data);
-            })
-            .catch(err => {
-                console.log(err);
-            });
-
+        this.props.onSaveListMovie();
     }
 
     renderSource = () => {
         let { listMovies } = this.props;
         return listMovies.map((item, index) => {
-            if( index < 8){
+            if (index < 8) {
                 return <Movie key={index} movie={item} />
             }
-            
+
         })
     }
 
@@ -34,7 +23,6 @@ class WatchingMovies extends Component {
             <div className="container">
                 <div className="row">
                     {this.renderSource()}
-                    {/* {this.renderHTML()} */}
                 </div>
             </div>
         )
@@ -47,8 +35,8 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        onSaveListMovie: (listMovies) => {
-            dispatch(action.actOnSaveListMovie(listMovies));
+        onSaveListMovie: () => {
+            dispatch(action.actOnSaveListMovieAPI());
         }
 
     };
