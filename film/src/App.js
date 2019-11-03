@@ -8,7 +8,6 @@ import Navbar from './components/Navbar';
 import ListCarousels from './Pages/Carousel/ListCarousels';
 import Footer from './Pages/Footer/Footer';
 
-
 function App() {
 
   const showMenuHome = (routes) => {
@@ -27,7 +26,7 @@ function App() {
         <Navbar />
         <ListCarousels />                    
         <Switch>
-          {showMenuHome(routesHome)}
+          {showMenuHome(routesHome)} 
         </Switch>
         <Footer />
       </div>

@@ -12,12 +12,13 @@ export default class Carousel extends Component {
                     <li data-target="#demo" data-slide-to={1} />
                     <li data-target="#demo" data-slide-to={2} />
                     <li data-target="#demo" data-slide-to={3} />
+                    <li data-target="#demo" data-slide-to={4} />
                 </ul>
                 {/* The slideshow */}
 
                 <div className="carousel-inner">
                     <div className="carousel-item active">
-                        <img src={require('./../img/carousel5.jpg')} width="100%" />
+                        <img src={require('./../img/carousel6.jpg')} width="100%" />
                     </div>
                     <div className="carousel-item">
                         <img src={require('./../img/carousel2.jpg')}  width="100%" />
@@ -27,6 +28,9 @@ export default class Carousel extends Component {
                     </div>
                     <div className="carousel-item">
                         <img src={require('./../img/carousel1.jpg')}  width="100%" />
+                    </div>
+                    <div className="carousel-item">
+                        <img src={require('./../img/carousel5.jpg')}  width="100%" />
                     </div>
                 </div>
                 {/* Left and right controls */}

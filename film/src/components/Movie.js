@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { NavLink} from 'react-router-dom';
 import _movie from './../SCSS/Components/Movie/_movie.scss';
 
 export default class Movie extends Component {
@@ -10,11 +11,10 @@ export default class Movie extends Component {
                     <iframe className="card-img-top" src={movie.trailer} width="100%" height={300} />
                     <div className="card-body">
                         <h4 className="card-title myPhim__Name">{movie.tenPhim}</h4>
-                        <p className="myPhim_mota">{movie.moTa}</p>
-                        <button className="btn btn-danger container-fluid">Mua Vé</button>
+                        <p className="card-content myPhim_mota">{movie.moTa}</p>
+                        <NavLink className="container btn btn-success " to={`/detail-movie/${movie.maPhim}`}>Chi tiết</NavLink>
                     </div>
                 </div>
-
             </div>
         )
     }
