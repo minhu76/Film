@@ -1,8 +1,7 @@
 import * as ActionType from "./../constants/ActionType";
 
 let initState = {
-    listCinemas: [],
-    cinema: {}
+    listCinemas: []
  
 };
 

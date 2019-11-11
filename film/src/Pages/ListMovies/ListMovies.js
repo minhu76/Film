@@ -6,8 +6,8 @@ export default class ListMovies extends Component {
 
     render() {
         return (
-            <div className="container">
-                <ul className="nav nav-pills mx-auto" id="pills-tab" role="tablist">
+            <div className="container my-5">
+                <ul className="nav nav-pills mx-auto justify-content-center" id="pills-tab" role="tablist">
                     <li className="nav-item">
                         <a className="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home1" role="tab" aria-controls="pills-home" aria-selected="true">ĐANG CHIẾU</a>
                     </li>
