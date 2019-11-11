@@ -97,6 +97,27 @@ const actOnSaveListShowTimeAPI = (id) => {
             })
     }
 }
+
+// login
+const actLoginAPI = (id) =>{
+    return dispatch =>{
+        Axios({
+            method: "GET",
+            url: `http://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/DangNhap`
+        })
+        .then(result => {
+            dispatch({
+                type: ActionType.LOGIN,
+                user: result.data
+            })
+        })
+        .catch(err =>{
+            console.log(err);
+        })
+    }
+}
+
+//=========end login==========
 const actDetailShowTimeAPI = (id) => {
     return dispatch => {
         Axios({
