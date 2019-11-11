@@ -11,10 +11,6 @@ const movieReducer = (state = initState, action) =>{
             state.listMovies = action.listMovie;
             return {...state};
         }
-        case ActionType.ON_SAVE_LIST_CAROUSEL:{
-            state.listMovies = action.listMovie;
-            return {...state};
-        }
         case ActionType.DETAIL_MOVIE:{
             state.movie = action.movie;
             return {...state}
@@ -22,8 +18,7 @@ const movieReducer = (state = initState, action) =>{
         case ActionType.DETAIL_CINEMA:{
             state.cinema = action.cinema;
             return {...state}
-        }
-           
+        }    
         default:
             return {...state};
     }

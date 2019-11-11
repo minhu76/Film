@@ -22,7 +22,6 @@ class ListCinemas extends Component {
     render() {
         return (
             <div className="container">
-                <h3 className="text-white">Cụm Rạp</h3>
                 <div className="row justify-content-between">
                     {this.renderSource()}
                 </div>

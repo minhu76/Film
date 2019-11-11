@@ -1,13 +1,10 @@
 import HomePage from './Pages/HomePage';
 import ListMovies from './Pages/ListMovies/ListMovies';
 import ListCinemas from './Pages/Cinemas/ListCinemas';
-import NewsApp from './Pages/News/NewsApp';
+import ListNews from './Pages/News/ListNews';
 import ListMember from './Pages/Member/ListMember';
 import DetailCinema from './components/DetailCinema';
 import DetailMovie from './components/DetailMovie';
-import ListShowtimes from './Pages/Showtimes/ListShowtimes';
-
-//import PageNotFound from './Pages/PageNotFound/PageNotFound';
 
 const routesHome = [
     {
@@ -28,7 +25,7 @@ const routesHome = [
     {
         path:"/news",
         exact: false,
-        component: NewsApp
+        component: ListNews
     },
     {
         path:"/member",
@@ -44,17 +41,7 @@ const routesHome = [
         path:"/detail-cinema/:id",
         exact:false,
         component: DetailCinema
-    },
-    {
-        path:"/detail-showtime/:id",
-        exact:false,
-        component: ListShowtimes
     }
-    // {
-    //     path:"",
-    //     exact:false,
-    //     component: PageNotFound,
-        
-    // }
+ 
 ];
 export {routesHome};

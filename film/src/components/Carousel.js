@@ -3,17 +3,16 @@ import _carousel from './../SCSS/Components/Carousel/_carousel.scss';
 
 export default class Carousel extends Component {
     render() {
-        let { carousel } = this.props;
         return (
             <div id="demo" className="carousel slide" data-ride="carousel">
                 {/* Indicators */}
-                <ul className="carousel-indicators">
+                {/* <ul className="carousel-indicators">
                     <li data-target="#demo" data-slide-to={0} className="active" />
                     <li data-target="#demo" data-slide-to={1} />
                     <li data-target="#demo" data-slide-to={2} />
                     <li data-target="#demo" data-slide-to={3} />
                     <li data-target="#demo" data-slide-to={4} />
-                </ul>
+                </ul> */}
                 {/* The slideshow */}
 
                 <div className="carousel-inner">

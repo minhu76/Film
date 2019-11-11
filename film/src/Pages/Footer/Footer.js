@@ -19,7 +19,7 @@ export default class Footer extends Component {
                         </div>
                         <div className="col-sm-6 col-md-3">
                             <div className="footer__item">
-                                <h3>Về 123Phim</h3>
+                                <h3>Về ProjectPhim</h3>
                                 <ul className="list-unstyled myList">
                                     <li><a href="#">Về chúng tôi</a></li>
                                     <li><a href="#">Điều lệ sử dụng</a></li>
@@ -51,7 +51,7 @@ export default class Footer extends Component {
                         </div>
                     </div>
                     <div className="copyright border-top border-secondary mt-4">
-                        <p className="py-3 mb-0 myCopyright">2019 © 123Phim/Web design by Minhu</p>
+                        <p className="py-3 mb-0 myCopyright">2019 © ProjectPhim/Web design by Minhu</p>
                     </div>
                 </div>
             </footer>

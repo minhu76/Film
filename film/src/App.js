@@ -1,11 +1,8 @@
 import React from 'react';
 import './App.css';
-//redux routing
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { routesHome } from './routes';
-//import Pages
 import Navbar from './components/Navbar';
-import ListCarousels from './Pages/Carousel/ListCarousels';
 import Footer from './Pages/Footer/Footer';
 
 function App() {
@@ -23,8 +20,7 @@ function App() {
   return (
     <BrowserRouter>
       <div>
-        <Navbar />
-        <ListCarousels />                    
+        <Navbar />                   
         <Switch>
           {showMenuHome(routesHome)} 
         </Switch>
