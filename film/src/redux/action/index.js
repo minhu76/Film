@@ -78,10 +78,7 @@ const actDetailCinemaAPI = (id) => {
             })
     }
 }
-<<<<<<< HEAD
 
-export { actOnSaveListMovie, actOnSaveListCinema, actDetailMovieAPI, actOnSaveListMovieAPI, actDetailCinemaAPI, actOnSaveListCinemaAPI };
-=======
 const actOnSaveListShowTimeAPI = (id) => {
     return dispatch => {
         Axios({
@@ -138,4 +135,4 @@ const actDetailShowTimeAPI = (id) => {
     }
 }
 export { actOnSaveListMovie, actOnSaveListCinema, actDetailMovieAPI, actOnSaveListMovieAPI, actDetailCinemaAPI, actOnSaveListCinemaAPI, actDetailShowTimeAPI, actOnSaveListShowTimeAPI };
->>>>>>> doanphuongnhi
+
