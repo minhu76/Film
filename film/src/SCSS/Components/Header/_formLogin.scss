@@ -1,0 +1,111 @@
+@import "./../../Helper/variable";
+
+
+.form__login{
+    position: relative;
+}
+.login__item{
+    padding-top: 60px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 75%; 
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    // -webkit-transform: translateX(-50%) translateY(-50%);
+    display: flex;
+
+}
+
+.login{
+    text-align: center;
+    
+}
+
+.login-form-1{
+   
+    padding: 2% 40px;
+    padding-left: 40px;
+    height: 400px;
+    background-color:white;
+    border-radius: 10px  0 0 10px;
+    
+}
+.login-form-1 h3{
+    text-align: center;
+    color: #333;
+    margin-bottom: .5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+.login-form-2{
+    padding:2% 40px;
+    height: 400px;
+    background-color:$color-white ;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+    border-radius:0 10px 10px 0;
+}
+.login-form-2 h3{
+    text-align: center;
+    color: #fff;
+    
+}
+.login-container form{
+    padding: 10%;
+}
+.btnSubmit
+{
+    width: 50%;
+    border-radius: 1rem;
+    padding: 1.5%;
+    border: none;
+    cursor: pointer;
+}
+.login-form-1 .btnSubmit{
+    font-weight: 600;
+    border-radius: 5px;
+    width: 50px;
+    background-color: $color-blue;
+    color: white;
+    margin-left: 50px;
+    &:hover{
+        background-color: $color-blue-0;
+    }
+}
+.login-form-2 .btn-block{
+    border: none;
+    font-weight: 600;
+    background-color: $color-blue;
+    &:hover{
+        background-color: $color-blue-0;
+    }
+}
+.login-form-2 .ForgetPwd{
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+}
+.login-form-1 .ForgetPwd{
+    color: $color-blue;
+    font-size: $fs-0;
+    text-decoration: none;
+    &:hover{
+        color: $color-red-0;
+    }
+}
+.login-form-1, .login-form-2  h5{
+    color:$color-blue-0;
+}
+
+.login-form-1 .social{
+    margin-top: 75px;
+    
+}
+.form__login .close{
+    color:white;
+    font-size: 30px;
+    padding-right: 20px;
+    &:hover{
+        color: $color-blue-0;
+    }
+}
