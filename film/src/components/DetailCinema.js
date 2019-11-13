@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import * as action from './../redux/action/index';
 import { connect } from "react-redux";
-//import { NavLink } from "react-router-dom";
+
 
 
 class DetailCinema extends Component {
@@ -24,7 +24,6 @@ class DetailCinema extends Component {
                                 <Fragment key={index}>
                                     <div className="row">
                                         <div className="card-body">
-                                            <img src={require('./../img/bhd.jpg')} />
                                             <img src={require('./../img/galaxy.jpg')} />
                                             <img src={require('./../img/lotte.jpg')} />
                                             <img src={require('./../img/cns.jpg')} />
@@ -67,7 +66,7 @@ class DetailCinema extends Component {
 
     render() {
         return (
-            <div className="container-fluid bg-dark my-0 text-white">
+            <div className="container bg-dark my-0 text-white">
                 {this.renderTable()}
             </div>
         )

@@ -17,10 +17,10 @@ export default class Carousel extends Component {
 
                 <div className="carousel-inner">
                     <div className="carousel-item active">
-                        <img src={require('./../img/carousel6.jpg')} width="100%" />
+                        <img src={require('./../img/carousel7.jpg')} width="100%" />
                     </div>
                     <div className="carousel-item">
-                        <img src={require('./../img/carousel2.jpg')}  width="100%" />
+                        <img src={require('./../img/carousel6.jpg')}  width="100%" />
                     </div>
                     <div className="carousel-item">
                         <img src={require('./../img/carousel3.jpg')}  width="100%" />
@@ -30,6 +30,12 @@ export default class Carousel extends Component {
                     </div>
                     <div className="carousel-item">
                         <img src={require('./../img/carousel5.jpg')}  width="100%" />
+                    </div>
+                    <div className="carousel-item">
+                        <img src={require('./../img/carousel2.jpg')}  width="100%" />
+                    </div>
+                    <div className="carousel-item">
+                        <img src={require('./../img/carousel8.jpg')}  width="100%" />
                     </div>
                 </div>
                 {/* Left and right controls */}

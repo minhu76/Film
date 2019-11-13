@@ -8,8 +8,8 @@ let initState = {
 const cinemaReducer = (state = initState, action) =>{
     switch(action.type){
         case ActionType.ON_SAVE_LIST_CINEMA:{
-            let listCinemas = action.listCinema;
-            return {listCinemas};
+            state.listCinemas = action.listCinemas;
+            return {...state};
         }
         
         default:
