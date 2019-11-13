@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import * as action from './../redux/action/index';
 import { connect } from "react-redux";
+import _bookseat from './../SCSS/Components/Book/_bookseat.scss';
 
 class OptionSeat extends Component {
 
@@ -23,7 +24,7 @@ class OptionSeat extends Component {
                     return (
                         <div className="card" style={{ width: '5rem' }} key={index}>
                             <div className="list-group list-group-flush">
-                                <button className="list-group-item">{item.tenGhe}</button>
+                                <button className="list-group-item seat-active">{item.tenGhe}</button>
                             </div>
                         </div>
                     )
@@ -57,7 +58,9 @@ class OptionSeat extends Component {
             <div className="container">
                 <div className="row">
                     <div className="col-sm-8">
-                        <div className="row">
+                        <div className="row screen">
+                            <img src={require('./../img/screen.png')} style={{ width: '45rem', height: '3rem' }} />
+                            <span className="screen-text">Màn hình</span>
                             {this.renderTable()}
                         </div>
                     </div>
