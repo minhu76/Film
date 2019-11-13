@@ -21,7 +21,7 @@ class DetailMovie extends Component {
                         <td>{item.thoiLuong}phút</td>
                         <td>{item.giaVe}</td>
                         <td>
-                            <NavLink className="btn btn-success text-white" to="">Mua Vé</NavLink>
+                            <NavLink className="btn btn-success text-white" to={`/detail-seat/${item.maLichChieu}`}>Đặt Vé</NavLink>
                         </td>
                     </tr>
                 )
@@ -62,7 +62,7 @@ class DetailMovie extends Component {
                                     <td>Giờ Chiếu</td>
                                     <td>Thời Lượng</td>
                                     <td>Giá Vé</td>
-                                    <td>Mua Ngay</td>
+                                    <td>Đặt Ngay</td>
                                 </tr>
                             </thead>
                             <tbody>

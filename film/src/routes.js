@@ -5,6 +5,7 @@ import ListNews from './Pages/News/ListNews';
 import ListMember from './Pages/Member/ListMember';
 import DetailCinema from './components/DetailCinema';
 import DetailMovie from './components/DetailMovie';
+import OptionSeat from './components/OptionSeat';
 
 const routesHome = [
     {
@@ -41,6 +42,11 @@ const routesHome = [
         path:"/detail-cinema/:id",
         exact:false,
         component: DetailCinema
+    },
+    {
+        path:"/detail-seat/:id",
+        exact: false,
+        component: OptionSeat
     }
  
 ];

@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 //import Login from './Login';
 import _header from './../SCSS/Components/Header/_header.scss';
 import _button from "../SCSS/Components/Button/_button.scss";
-import FormLogin2 from "../Pages/FormLogin/FormLogin2";
+import FormLogin from '../Pages/FormLogin/FormLogin';
 
 export default class Navbar extends Component {
     render() {
@@ -39,7 +39,7 @@ export default class Navbar extends Component {
 
                         <div className="my__signup">
                             <img src={require('./../img/avatar.png')} width="30px" />
-                            <button className="myButton"><FormLogin2 /></button>
+                            <button className="myButton"><FormLogin /></button>
                             {/* <button className="myButton"><Login /></button> */}
                         </div>
                     </div>

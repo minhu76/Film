@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import FormSignUp from './FormSignUp';
-import _login from './../../SCSS/Components/Header/_login.scss';
+//import _login from './../../SCSS/Components/Header/_login.scss';
 
 export default class FormLogin extends Component {
   render() {
