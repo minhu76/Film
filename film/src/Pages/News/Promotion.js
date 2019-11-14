@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-
+import _listnews from './../../SCSS/Components/News/_listnews.scss';
 export default class Promotion extends Component {
     render() {
         return (
-            <div className="card container-fluid bg-dark text-white">
-                <div className="row">
+            <div className="card my-listnew">
+                <div className="row my-listnew">
                     <div className="col-sm-6">
                         <img src={require('./../../img/promo-1.jpg')} width={500} height={350} />
                         <div class="card-body">

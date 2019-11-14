@@ -1,18 +1,16 @@
 import React, { Component, Fragment } from 'react';
-import * as action from './../redux/action/index';
+import * as action from '../redux/action/index';
 import { connect } from 'react-redux';
 
 class OptionMovie extends Component {
     renderSource = () => {
         let { listMovies } = this.props;
         return listMovies.map((item, index) => {
-            return <option key={index}>{item.tenPhim}</option>
+            return <option ref="optionmovie" key={index} value={item.maPhim}>{item.tenPhim}</option>
         })
     }
 
     render() {
-        let {listMovies} = this.props;
-        console.log(listMovies);
         return (
             <Fragment>
                 {this.renderSource()}
