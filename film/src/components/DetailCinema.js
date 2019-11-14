@@ -18,7 +18,7 @@ class DetailCinema extends Component {
         return this.props.cinema.map((item, index) => {
             return (
                 <Fragment key={index}>
-                    <Fragment className="card bg-dark container row">
+                    <Fragment className="card container row">
                         {item.lstCumRap.map((item, index) => {
                             return (
                                 <Fragment key={index}>
@@ -41,7 +41,7 @@ class DetailCinema extends Component {
                                                     <div className="row mx-0 px-0">
                                                         {item.lstLichChieuTheoPhim.map((item, index) => {
                                                             return (
-                                                                <div className="card bg-dark" style={{ width: '8' }} key={index}>
+                                                                <div className="card" style={{ width: '8' }} key={index}>
                                                                     <div className="card-body px-2 py-2">
                                                                         <p className="card-title">{new Date(item.ngayChieuGioChieu).toLocaleDateString('en-GB')}</p>
                                                                         <p className="card-title">{new Date(item.ngayChieuGioChieu).toLocaleTimeString()}</p>
@@ -66,7 +66,7 @@ class DetailCinema extends Component {
 
     render() {
         return (
-            <div className="container bg-dark my-0 text-white">
+            <div className="container my-0">
                 {this.renderTable()}
             </div>
         )

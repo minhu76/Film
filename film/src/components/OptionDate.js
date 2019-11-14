@@ -2,13 +2,15 @@ import React, { Component, Fragment } from 'react';
 import * as action from './../redux/action/index';
 import { connect } from 'react-redux';
 
-class OptionCinema extends Component {
-    
+
+class OptionDate extends Component {
+
     renderSource = () => {
-        let {listCinemas} = this.props;
-        return listCinemas.map((item, index) => {
-            return <option key={index}>{item.maHeThongRap}</option>
+        let { listMovies } = this.props;
+        return listMovies.map((item, index) => {
+            return <option key={index}>{new Date(item.ngayKhoiChieu).toLocaleDateString()}</option>
         })
+    
     }
 
     render() {
@@ -22,15 +24,15 @@ class OptionCinema extends Component {
 }
 const mapStateToProps = (state) => {
     return {
-        listCinemas: state.cinemaReducer.listCinemas
+        listMovies: state.movieReducer.listMovies
     }
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        onSaveListCinema: () => {
-            dispatch(action.actOnSaveListCinemaAPI());
+        onSaveListMovie: () => {
+            dispatch(action.actOnSaveListMovieAPI());
         }
 
-    }
-}
-export default connect(mapStateToProps, mapDispatchToProps)(OptionCinema);
+    };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(OptionDate);

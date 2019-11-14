@@ -2,11 +2,13 @@ import React, { Component } from 'react'
 import News from './News';
 import Hollywood from './Hollywood';
 import Promotion from './Promotion';
+import _listnews from './../../SCSS/Components/News/_listnews.scss';
+
 export default class ListNews extends Component {
     render() {
         return (
-            <div className="container">
-                <ul className="nav nav-pills my-3 justify-content-center" id="pills-tab" role="tablist">
+            <div className="container my-listnew">
+                <ul className="nav my-3 justify-content-center my-listnew" id="pills-tab" role="tablist">
                     <li className="nav-item">
                         <a className="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home2" role="tab" aria-controls="pills-home" aria-selected="true">ĐIỆN ẢNH</a>
                     </li>

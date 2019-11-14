@@ -21,7 +21,7 @@ class DetailMovie extends Component {
                         <td>{item.thoiLuong}phút</td>
                         <td>{item.giaVe}</td>
                         <td>
-                            <NavLink className="btn btn-success text-white" to={`/detail-seat/${item.maLichChieu}`}>Đặt Vé</NavLink>
+                            <NavLink className="btn btn-success" to={`/detail-seat/${item.maLichChieu}`}>Đặt Vé</NavLink>
                         </td>
                     </tr>
                 )
@@ -31,13 +31,13 @@ class DetailMovie extends Component {
     render (){
         let {movie}= this.props;
         return (
-            <div className="container-fluid bg-dark">
+            <div className="container-fluid">
                 <div className="row">
                     <div className="col-sm-6">
                         <img src={movie.hinhAnh} alt="" />
                     </div>
                     <div className="col-sm-6">
-                        <table className="table text-white">
+                        <table className="table">
                             <tbody>
                                 <tr>
                                     <td>Tên Phim</td>
@@ -53,7 +53,7 @@ class DetailMovie extends Component {
                 </div>
                 <div className="row">
                     <div className="col-sm-12">
-                        <table className="table text-white">
+                        <table className="table">
                             <thead>
                                 <tr>
                                     <td>Cụm Rạp</td>

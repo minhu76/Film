@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
+import _listnews from './../../SCSS/Components/News/_listnews.scss';
 
 export default class News extends Component {
     render() {
         return (
-            <div className="card container-fluid bg-dark text-white">
-                <div className="row">
+            <div className="card my-listnew">
+                <div className="row my-listnew">
                     <div className="col-sm-6">
                         <img src={require('./../../img/tintuc-3.jpg')} width={500}  height={350} />
                         <div class="card-body">
@@ -13,7 +14,7 @@ export default class News extends Component {
                         </div>
                     </div>
                     <div className="col-sm-6">
-                        <img src={require('./../../img/tintuc-4.jpg')} width={520}  height={350}/>
+                        <img src={require('./../../img/tintuc-4.jpg')} width={500}  height={350}/>
                         <div class="card-body">
                             <h4 class="card-title">Zombieland: Double Tap - Tận thế chưa bao giờ vui đến thế !!</h4>
                             <p class="card-text">Zombieland: Double Tap lấy bối cảnh 10 năm sau phần đầu tiên. Lúc này, bộ tứ Columbus (Jesse Eisenberg), Tallahassee (Woody Harrelson), Wichita (Emma Stone) và Little Rock (Abigail Breslin) đã trở thành một gia đình cũng như bậc thầy trong việc săn thây ma</p>
