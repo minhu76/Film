@@ -1,17 +1,18 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import * as action from './../../redux/action/index';
 import { connect } from 'react-redux';
 import _listbook from './../../SCSS/Components/Book/_listbook.scss';
+import OptionBook from './OptionBook';
 
 class BookMovie extends Component {
-    constructor(props){
+    constructor(props) {
         super(props)
-        this.state={
+        this.state = {
             optionmovie: ''
         }
     }
-    
-    handleOnChange(){
+
+    handleOnChange() {
         this.setState({
             optionmovie: this.refs.optionmovie.value
         })
@@ -19,31 +20,38 @@ class BookMovie extends Component {
     renderSource = () => {
         let { listMovies } = this.props;
         return listMovies.map((item, index) => {
-            return <option ref="optionmovie" key={index} value={item.maPhim}>{item.tenPhim}</option>
+            return <option value={item.maPhim} key={index} isSelect={item}>{item.tenPhim}</option>
         })
     }
     render() {
-        console.log(this.props);
-       return (
-            <div className="my__bookDetail">
-                <select className="my__bookSelect form-control" onChange={(e)=>{this.handleOnChange()}}>
-                    <option className="my__bookOption">Phim</option>
-                    {this.renderSource()}
-                </select>
-            </div>
-
+        return (
+            <div>
+                <div className="form-group">
+                    {/* <div className="container d-flex justify-content-between align-items-center my__listBook">
+                    <div className="my__bookDetail"> */}
+                    <select className="my__bookSelect form-control" onChange={(e) => { this.handleOnChange() }} ref="optionmovie">
+                        <option className="my__bookOption">Phim</option>
+                        <Fragment>
+                            {this.renderSource()}
+                        </Fragment>
+                    </select>
+                </div>
+                <div>
+                    <OptionBook isSelect={this.state.optionmovie} />
+                </div>
+            </div>  
         )
     }
 }
 const mapStateToProps = (state) => {
     return {
         listMovies: state.movieReducer.listMovies
-    }
+    }   
 }
 const mapDispatchToProps = (dispatch) => {
     return {
         onSaveListMovie: () => {
-            dispatch(action.actDetailCinemaAPI());
+            dispatch(action.actOnSaveListMovieAPI());
         }
 
     };
