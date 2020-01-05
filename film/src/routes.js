@@ -1,11 +1,11 @@
 import HomePage from './Pages/HomePage';
-import ListMovies from './Pages/ListMovies/ListMovies';
+import ListMovies from './Pages/ListMovies/list-movies';
 import ListCinemas from './Pages/Cinemas/ListCinemas';
 import ListNews from './Pages/News/ListNews';
 import ListMember from './Pages/Member/ListMember';
 import DetailCinema from './components/DetailCinema';
 import DetailMovie from './components/DetailMovie';
-import OptionSeat from './components/OptionSeat';
+import CheckedMovie from './components/Checked/checked-movie';
 
 const routesHome = [
     {
@@ -46,7 +46,7 @@ const routesHome = [
     {
         path:"/detail-seat/:id",
         exact: false,
-        component: OptionSeat
+        component: CheckedMovie
     }
  
 ];

@@ -1,9 +1,11 @@
 import React from 'react';
-import './App.css';
+import './assets/SCSS/index.scss';
+
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { routesHome } from './routes';
 import Navbar from './components/Navbar';
 import Footer from './Pages/Footer/Footer';
+import PageNotFound from "./components/page-not-found";
 
 function App() {
 
@@ -20,9 +22,10 @@ function App() {
   return (
     <BrowserRouter>
       <div>
-        <Navbar />                   
+        <Navbar />
         <Switch>
-          {showMenuHome(routesHome)} 
+          {showMenuHome(routesHome)}
+          <Route exact path="*" component={PageNotFound} />
         </Switch>
         <Footer />
       </div>

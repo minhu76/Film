@@ -6,7 +6,7 @@ import Rule from './Rule';
 export default class ListMember extends Component {
     render() {
         return (
-            <div className="container">
+            <div className="container pt-5" id="memberblock">
                 <ul className="nav nav-pills mx-auto" id="pills-tab" role="tablist">
                     <li className="nav-item">
                         <a className="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home3" role="tab" aria-controls="pills-home" aria-selected="true">Thể Lệ</a>

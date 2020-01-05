@@ -21,7 +21,8 @@ class ListCinemas extends Component {
 
     render() {
         return (
-            <div className="container">
+            <div className="container pt-5" id="cinemablock">
+               
                 <div className="row justify-content-between">
                     {this.renderSource()}
                 </div>

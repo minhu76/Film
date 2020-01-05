@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import _listnews from './../../SCSS/Components/News/_listnews.scss';
+
 export default class Promotion extends Component {
     render() {
         return (

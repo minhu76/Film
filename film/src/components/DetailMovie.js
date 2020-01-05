@@ -4,16 +4,16 @@ import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 
 class DetailMovie extends Component {
-    componentDidMount(){
+    componentDidMount() {
         let id = this.props.match.params.id;
         this.props.detailMovie(id);
     }
     renderTable = () => {
-        let {movie}= this.props;
-        if(movie.lichChieu){
-            return movie.lichChieu.map((item, index)=>{
+        let { movie } = this.props;
+        if (movie.lichChieu) {
+            return movie.lichChieu.map((item, index) => {
                 return (
-                    <tr key = {index}>
+                    <tr key={index}>
                         <td>{item.thongTinRap.tenCumRap}</td>
                         <td>{item.thongTinRap.tenRap}</td>
                         <td>{new Date(item.ngayChieuGioChieu).toLocaleDateString()}</td>
@@ -28,10 +28,10 @@ class DetailMovie extends Component {
             })
         }
     }
-    render (){
-        let {movie}= this.props;
+    render() {
+        let { movie } = this.props;
         return (
-            <div className="container-fluid">
+            <div className="container-fluid pt-5">
                 <div className="row">
                     <div className="col-sm-6">
                         <img src={movie.hinhAnh} alt="" />

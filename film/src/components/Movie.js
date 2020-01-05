@@ -1,21 +1,68 @@
-    import React, { Component } from 'react';
-import { NavLink} from 'react-router-dom';
-import _movie from './../SCSS/Components/Movie/_movie.scss';
+import React, { Component } from 'react';
+import StarRatings from "react-star-ratings";
+import { NavLink } from "react-router-dom";
 
-export default class Movie extends Component {
+class Movie extends Component {
+    rateMovie = (rating) => {
+        if (rating) {
+            return (<StarRatings
+                rating={rating}
+                starRatedColor="#fb4226"
+                changeRating={this.changeRating}
+                numberOfStars={5}
+                name='rating'
+                starDimension="10px"
+                starSpacing="0"
+            />)
+        }
+
+    }
     render() {
-        let {movie} = this.props;
+        let { movie } = this.props;
         return (
-            <div className="col-sm-3 py-1">
-                <div className="card border-0">
-                    <img className="card-img-top" src={movie.hinhAnh} width="100%" height={350}/>
-                    <div className="card-body">
-                        <h4 className="card-title myPhim__Name">{movie.tenPhim}</h4>
-                        <p className="card-content myPhim_mota">{movie.moTa}</p>
-                        <NavLink className="container btn btn-success " to={`/detail-movie/${movie.maPhim}`}>Chi tiết</NavLink>
+            <div className="col-6 col-md-6 col-lg-3 px-1 pt-2">
+                <div className="card w-100 border-0">
+                    <div className="card-header p-0">
+                        <div>
+                            <img
+                                src={movie.hinhAnh}
+                                className="card-img-top img-fluid"
+                                alt=""
+                            />
+                            <span>C10</span>
+                            <span>
+                                <p className="mb-0">9.9</p>
+                                <p className="mb-0">
+                                    {this.rateMovie(movie.danhGia)}
+                                </p>
+                            </span>
+                        </div>
+                        <div className="card-overplay" />
+                        <div className="card-play" data-toggle="modal" data-target="#movie-modal" onClick={() => this.props.handleSrcModalMovie(movie.trailer)}>
+                            <img
+                                src="https://123phim.vn/app/assets/img/icons/play-video.png"
+                                alt=""
+                                className="img-fluid"
+                            />
+                        </div>
+                    </div>
+                    <div className="card-body p-0">
+                        <div className="card-text">
+                            <p className="mb-0 d-flex align-items-center">
+                                {movie.tenPhim}
+                            </p>
+                            <p className="mb-0 mt-2">{movie.moTa}</p>
+                        </div>
+                        <div className="card-bookTicket w-100">
+                            <NavLink className="container btn btn-success " to={`/detail-movie/${movie.maPhim}`}>Book</NavLink>
+                        </div>
                     </div>
                 </div>
             </div>
-        )
+
+        );
     }
 }
+
+export default Movie;
+

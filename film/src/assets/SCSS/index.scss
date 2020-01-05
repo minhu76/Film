@@ -1,0 +1,18 @@
+@import './Helper/_variables.scss';
+@import './Helper/_mixin.scss';
+
+@import './Base/_reset.scss';
+@import './Base/_customize.scss';
+
+@import './Component/_button.scss';
+@import './Component/_search.scss';
+@import './Component/_checked.scss';
+
+@import './Layout/_movie.scss';
+@import "./Layout/_footer.scss";
+@import './Layout/_header.scss';
+@import "./Layout/_carousel.scss";
+@import "./Layout/_formsignup.scss";
+@import "./Layout/_checked.scss";
+@import "./Layout/_page-not-found.scss";
+@import "./Layout/_list-news.scss";

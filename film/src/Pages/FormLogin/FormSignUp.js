@@ -1,169 +1,293 @@
-import React, { Component } from 'react';
-import _formsignup from './../../SCSS/Components/Header/_formsignup.scss';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import * as action from "./../../redux/action/index";
 
-export default class FormSignUp extends Component {
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         values: {
-    //             username: "",
-    //             password: "",
-    //             email: ""
-    //         },
-    //         errors: {
-    //             username: "",
-    //             password: "",
-    //             email: ""
-    //         },
-    //         formValid: false,
-    //         usernameValid: false,
-    //         passwordValid: false,
-    //         emailValid: false
-    //     }
-    // }
+class FormSignUp extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: {
+        taiKhoan: "",
+        hoTen: "",
+        matKhau: "",
+        email: "",
+        soDt: ""
+      },
+      error: {
+        taiKhoan: "",
+        hoTen: "",
+        matKhau: "",
+        email: "",
+        soDt: ""
+      },
+      isValid: {
+        isTaiKhoanValid: false,
+        isHoTenValid: false,
+        isMatKhauValid: false,
+        isEmailValid: false,
+        isSoDTValid: false,
+        isSignInValid: false
+      }
+    };
+  }
+  handleOnChange = event => {
+    let { name, value } = event.target;
+    this.setState({
+      value: { ...this.state.value, [name]: value }
+    });
+  };
+  handleOnSubmit = event => {
+    event.preventDefault();
+    const client = { ...this.state.value };
+    client.maNhom = "GP03";
+    client.maLoaiNguoiDung = "KhachHang";
+    if (this.state.isValid.isSignInValid) {
+      this.props.postSignUpUserClient(client);
+      this.props.handleCloseModal();
 
-    // handleSubmit(e) {
-    //     e.preventDefault();
-    //     console.log(222);
-    // }
-    // handleOnChange = (event) => {
-    //     let { name, value } = event.target;
-
-    //     this.setState({
-    //         values: { ...this.state.values, [name]: value }
-    //     }, () => { console.log(this.state) })
-
-    // }
-    // handleErrors = (event) => {
-    //     let { name, value } = event.target;
-    //     console.log(name, value);
-    //     let message = value === "" ? name + "????" : "";
-    //     let { usernameValid, passwordValid, emailValid } = this.state;
-    //     console.log(message);
-    //     switch (name) {
-    //         case "username":
-    //             usernameValid = message !== "" ? false : true;
-    //             if (value !== "" && value.length < 4) {
-    //                 usernameValid = false;
-    //                 message = "Bạn vui lòng nhập hơn 4 ký tự";
-    //             }
-    //             break;
-    //         case "password":
-    //             passwordValid = message !== "" ? false : true;
-    //             break;
-    //         case "email":
-    //             emailValid = message !== "" ? false : true;
-    //             if (value !== "" && !value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)) {
-    //                 message = "Email không hợp lệ";
-    //                 emailValid = false;
-    //             }
-    //             break;
-    //     }
-    //     this.setState({
-    //         errors: { ...this.state.errors, [name]: message },
-    //         usernameValid,
-    //         passwordValid,
-    //         emailValid
-    //     }, this.formValidation());
-    // }
-
-    // formValidation = () => {
-    //     this.setState({
-    //         formValid: this.state.usernameValid && this.state.passwordValid && this.state.emailValid
-    //     })
-    // }
-
-
-    render() {
-        return (
-            //         <div>
-            //             <div className="container">
-            //                 <div className="row">
-            //                     <div className="col-sm-6 mx-auto">
-            //                         <h3>Đăng Ký</h3>
-            //                         <p> Tạo tài khoản miễn phí</p>
-            //                         <form onSubmit={this.handleSubmit}>
-            //                             <div className="form-group">
-            //                                 <label htmlFor="">Họ Tên</label>
-            //                                 <input type="text" className="form-control" name="username" onChange={this.handleOnChange} onBlur={this.handleErrors} onKeyUp={this.handleErrors} />
-            //                                 {this.state.errors.username !== "" ? <div className="alert alert-danger">{this.state.errors.username}</div> : ""}
-            //                             </div>
-            //                             <div className="form-group">
-            //                                 <label htmlFor="">Mật Khẩu</label>
-            //                                 <input type="text" className="form-control" name="password" onChange={this.handleOnChange} onBlur={this.handleErrors} onKeyUp={this.handleErrors} />
-            //                                 {this.state.errors.password !== "" ? <div className="alert alert-danger">{this.state.errors.password}</div> : ""}
-            //                             </div>
-            //                             <div className="form-group">
-            //                                 <label htmlFor="">Email</label>
-            //                                 <input type="text" className="form-control" name="email" onChange={this.handleOnChange} onBlur={this.handleErrors} onKeyUp={this.handleErrors} />
-            //                                 {this.state.errors.email !== "" ? <div className="alert alert-danger">{this.state.errors.email}</div> : ""}
-            //                             </div>
-            //                             <button type="submit" className="container btn btn-success" disabled={!this.state.formValid}>Đăng Ký Tài Khoản</button>
-            //                         </form>
-            //                         {/* <button className="container btn btn-info" onClick={this.handleOk}> OK</button> */}
-            //                     </div>
-            //                 </div>
-            //             </div>
-            //         </div>
-
-
-            <div className="card bg-light">
-                <article className="card-body mx-auto" style={{ maxWidth: 400 }}>
-                    <h4 className="card-title mt-3 text-center">Đăng Ký</h4>
-                    <p className="text-center">Tạo tài khoản miễn phí ở đây</p>
-                    <form>
-                        <div className="form-group input-group">
-                            <div className="input-group-prepend">
-                                <span className="input-group-text"> <i className="fa fa-user" /> </span>
-                            </div>
-                            <input name className="form-control" placeholder="Họ tên" type="text" />
-                        </div>
-                        <div className="form-group input-group">
-                            <div className="input-group-prepend">
-                                <span className="input-group-text"> <i className="fa fa-envelope" /> </span>
-                            </div>
-                            <input name className="form-control" placeholder="Email" type="email" />
-                        </div>
-                        <div className="form-group input-group">
-                            <div className="input-group-prepend">
-                                <span className="input-group-text"> <i className="fa fa-phone" /> </span>
-                            </div>
-                            <select className="custom-select" style={{ maxWidth: 120 }}>
-                                <option selected>+084</option>
-                                <option value={1}>+0383</option>
-                            </select>
-                            <input name className="form-control" placeholder="Số điện thoại" type="text" />
-                        </div>
-                        <div className="form-group input-group">
-                            <div className="input-group-prepend">
-                                <span className="input-group-text"> <i className="fa fa-building" /> </span>
-                            </div>
-                            <select className="form-control">
-                                <option selected> Giới Tính</option>
-                                <option>Nam</option>
-                                <option>Nữ</option>
-                            </select>
-                        </div>
-                        <div className="form-group input-group">
-                            <div className="input-group-prepend">
-                                <span className="input-group-text"> <i className="fa fa-lock" /> </span>
-                            </div>
-                            <input className="form-control" placeholder="Mật khẩu" type="password" />
-                        </div>
-                        <div className="form-group input-group">
-                            <div className="input-group-prepend">
-                                <span className="input-group-text"> <i className="fa fa-lock" /> </span>
-                            </div>
-                            <input className="form-control" placeholder="Nhập lại mật khẩu" type="password" />
-                        </div>
-                        <div className="form-group">
-                            <button type="submit" className="btn btn-primary btn-block"> Tạo tài khoản</button>
-                        </div>
-                        <p className="text-center">Bạn có tài khoản chưa? <a href>Đăng nhập</a> </p>
-                    </form>
-                </article>
-            </div>
-
-        )
     }
+    this.setState({
+      value: {
+        taiKhoan: "",
+        hoTen: "",
+        matKhau: "",
+        email: "",
+        soDt: ""
+      },
+    })
+  };
+  checkValidation = event => {
+    let { name, value } = event.target;
+    let message = "";
+    let {
+      isTaiKhoanValid,
+      isHoTenValid,
+      isMatKhauValid,
+      isEmailValid,
+      isSoDTValid,
+      isSignInValid
+    } = this.state.isValid;
+    if (value === "") {
+      message = name + " not null";
+      isSignInValid = false;
+    } else {
+      switch (name) {
+        case "taiKhoan":
+          isTaiKhoanValid = message === "" ? true : false;
+
+
+          if (value.length < 5) {
+            message = "Please type more than 5 characters";
+            isTaiKhoanValid = false;
+          }
+          else if (this.props.listUsers.length > 0) {
+            let index = this.props.listUsers.findIndex((user => {
+              return user.taiKhoan === value;
+            }))
+            if (index !== -1) {
+              message = "Username existed";
+              isTaiKhoanValid = false;
+            }
+          }
+          break;
+        case "hoTen":
+          isHoTenValid = message === "" ? true : false;
+          break;
+        case "matKhau":
+          isMatKhauValid = message === "" ? true : false;
+          if (value.length < 6) {
+            message = "Please type password more than 6 characters";
+            isMatKhauValid = false;
+          }
+          break;
+        case "email":
+          isEmailValid = message === "" ? true : false;
+          let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+          if (!re.test(String(value).toLowerCase())) {
+            message = "email not suitable";
+            isEmailValid = false;
+          }
+          else if (this.props.listUsers.length > 0) {
+            let index = this.props.listUsers.findIndex((user => {
+              return user.email === value;
+            }))
+            if (index !== -1) {
+              message = "Email existed";
+              isEmailValid = false;
+            }
+          }
+          break;
+        case "soDt":
+          isSoDTValid = message === "" ? true : false;
+          if (!value.match(/^\d{10}$/)) {
+            message = " Phone is not suitable";
+            isSoDTValid = false;
+          }
+          break;
+        default:
+          break;
+      }
+      isSignInValid = isTaiKhoanValid && isEmailValid && isSoDTValid;
+    }
+    this.setState({
+      error: {
+        ...this.state.error,
+        [name]: message
+      },
+      isValid: {
+        isTaiKhoanValid,
+        isHoTenValid,
+        isMatKhauValid,
+        isEmailValid,
+        isSoDTValid,
+        isSignInValid
+      }
+    });
+  };
+  handShowErrorMessage = message => {
+    if (message !== "") {
+      return (
+        <span
+          class="text-left d-block"
+          style={{ color: "red", marginLeft: "25%" }}
+        >
+          {message}
+        </span>
+      )
+    }
+  }
+  render() {
+    let { taiKhoan, hoTen, matKhau, email, soDt } = this.state.value;
+    return (
+      <div
+        className="tab-pane fade"
+        id="sign-up"
+        role="tabpanel"
+        aria-labelledby="sign-up-tab"
+      >
+        <form className="mt-3 text-right" onSubmit={this.handleOnSubmit}>
+          <div
+            className={`form-group d-flex align-items-center ${
+              this.state.error.taiKhoan !== "" ? "mb-0" : ""
+              }`}
+          >
+            <label htmlFor="inputTaiKhoanSignIn" className="mb-0">
+              Username
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="inputTaiKhoanSignIn"
+              placeholder="Password"
+              name="taiKhoan"
+              value={taiKhoan}
+              onChange={this.handleOnChange}
+              onBlur={this.checkValidation}
+              onKeyUp={this.checkValidation}
+            />
+          </div>
+          {this.handShowErrorMessage(this.state.error.taiKhoan)}
+          <div
+            className={`form-group d-flex align-items-center ${
+              this.state.error.hoTen !== "" ? "mb-0" : ""
+              }`}
+          >
+            <label htmlFor="inputHoTenSignIn" className="mb-0">
+              Fullname
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="inputHoTenSignIn"
+              placeholder="Fullname"
+              name="hoTen"
+              value={hoTen}
+              onChange={this.handleOnChange}
+              onBlur={this.checkValidation}
+              onKeyUp={this.checkValidation}
+            />
+          </div>
+          {this.handShowErrorMessage(this.state.error.hoTen)}
+          <div
+            className={`form-group d-flex align-items-center ${
+              this.state.error.matKhau !== "" ? "mb-0" : ""
+              }`}
+          >
+            <label htmlFor="inputMatKhauSignIn" className="mb-0">
+              Password
+            </label>
+            <input
+              type="password"
+              className="form-control"
+              id="inputMatKhauSignIn"
+              placeholder="Password"
+              name="matKhau"
+              value={matKhau}
+              onChange={this.handleOnChange}
+              onBlur={this.checkValidation}
+              onKeyUp={this.checkValidation}
+            />
+          </div>
+          {this.handShowErrorMessage(this.state.error.matKhau)}
+          <div
+            className={`form-group d-flex align-items-center ${
+              this.state.error.email !== "" ? "mb-0" : ""
+              }`}
+          >
+            <label htmlFor="inputEmailSignIn">Email</label>
+            <input
+              type="email"
+              className="form-control"
+              id="inputEmailSignIn"
+              aria-describedby="emailHelp"
+              placeholder="Email"
+              name="email"
+              value={email}
+              onChange={this.handleOnChange}
+              onBlur={this.checkValidation}
+              onKeyUp={this.checkValidation}
+            />
+          </div>
+          {this.handShowErrorMessage(this.state.error.email)}
+          <div
+            className={`form-group d-flex align-items-center  ${
+              this.state.error.soDt !== "" ? "mb-0" : ""
+              }`}
+          >
+            <label htmlFor="inputSDTSignIn" className="mb-0">
+              Phone
+            </label>
+            <input
+              type="tel"
+              className="form-control"
+              id="inputSDTSignIn"
+              placeholder="Phone number"
+              name="soDt"
+              value={soDt}
+              onChange={this.handleOnChange}
+              onBlur={this.checkValidation}
+              onKeyUp={this.checkValidation}
+            />
+          </div>
+          {this.handShowErrorMessage(this.state.error.soDt)}
+          <button type="submit" className="btn btn-warning">
+            Sign Up
+          </button>
+        </form>
+      </div>
+    );
+  }
 }
+const mapStateToDrops = state => {
+  return {
+    listUsers: state.movieReducer.listUsers
+  }
+}
+const mapDispatchToDrops = dispatch => {
+  return {
+    postSignUpUserClient: client => {
+      dispatch(action.actPostSignUpUser(client));
+    }
+  }
+}
+export default connect(mapStateToDrops, mapDispatchToDrops)(FormSignUp);
